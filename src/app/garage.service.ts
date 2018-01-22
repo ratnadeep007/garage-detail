@@ -25,4 +25,8 @@ export class GarageService {
     this.garageCollection.add(garage);
   }
 
+  getGarage() {
+    return this.garages;
+  }
+
 }

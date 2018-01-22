@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MatInput, MatButton } from '@angular/material';
+import { MatInput, MatButton, MatCard, MatFormField, MatOption } from '@angular/material';
+import { MatButtonToggle } from '@angular/material/button-toggle';
+import { MatSelect } from '@angular/material/select';
 import { GarageService } from '../garage.service';
 import { Garage } from '../../models/Garage';
 
@@ -12,8 +14,8 @@ export class FormComponent implements OnInit {
   garage: Garage = {
     name: '',
     address: '',
-    cellnumber: ''
-
+    cellnumber: '',
+    type: ''
   };
 
   constructor(private garageService: GarageService) { }
@@ -22,11 +24,12 @@ export class FormComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.garage.name !== '' && this.garage.address !== '' && this.garage.cellnumber !== '') {
+    if (this.garage.name !== '' && this.garage.address !== '' && this.garage.cellnumber !== '' && this.garage.name !== '') {
       this.garageService.addGarage(this.garage);
       this.garage.name = '';
       this.garage.address = '';
       this.garage.cellnumber = '';
+      this.garage.type = '';
     }
   }
 

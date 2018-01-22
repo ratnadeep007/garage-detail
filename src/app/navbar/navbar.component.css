@@ -2,3 +2,14 @@
     margin: 0;
     box-shadow: 3px 2px 3px #000;
 }
+
+.btn {
+    text-decoration: none;
+    margin: 4px;
+    color: rgb(0, 0, 0);
+    font-size: 1.6rem;
+}
+
+.btn-div:active {
+    background: rgb(62, 65, 221);
+}

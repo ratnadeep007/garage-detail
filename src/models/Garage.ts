@@ -3,4 +3,5 @@ export interface Garage {
     name?: string;
     address?: string;
     cellnumber?: string;
+    type?: string;
 }

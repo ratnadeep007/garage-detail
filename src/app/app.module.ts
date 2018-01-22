@@ -6,19 +6,27 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatInputModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule, MatInputModule, MatToolbarModule, MatCardModule, MatFormFieldModule, MatOptionModule } from '@angular/material';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatTableModule } from '@angular/material/table';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormComponent } from './form/form.component';
 
 import { GarageService } from './garage.service';
+import { TableComponent } from './table/table.component';
+
+import { routes } from '../routes';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FormComponent
+    FormComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +37,14 @@ import { GarageService } from './garage.service';
     BrowserAnimationsModule,
     MatButtonModule,
     MatInputModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatOptionModule,
+    MatSelectModule,
+    RouterModule.forRoot(routes),
+    MatButtonToggleModule,
+    MatTableModule
   ],
   providers: [GarageService],
   bootstrap: [AppComponent]

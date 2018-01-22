@@ -1,0 +1,29 @@
+<div *ngIf="garages?.length > 0;else noItems" class="table">
+  <mat-table #table [dataSource]="dataSource">
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Garage Name</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="address">
+      <mat-header-cell *matHeaderCellDef>Garage Address</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.address}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="cellnumber">
+      <mat-header-cell *matHeaderCellDef>Garage Name</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.cellnumber}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="type">
+      <mat-header-cell *matHeaderCellDef>Garage Type</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.type}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
+<!-- </div> -->
+
+<ng-template #noItems>
+  <hr>
+  <h5>There are no garage to list</h5>
+</ng-template>

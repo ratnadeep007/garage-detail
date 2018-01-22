@@ -1,12 +1,27 @@
-<form (ngSubmit)="onSubmit()">
-  <mat-form-field class="input-field">
-    <input matInput placeholder="Garage Name" value="" [(ngModel)]="garage.name" name="name">
-  </mat-form-field>
-  <mat-form-field class="input-field">
-    <input matInput placeholder="Garage Address" value="" [(ngModel)]="garage.address" name="address">
-  </mat-form-field>
-  <mat-form-field class="input-field">
-    <input matInput placeholder="Garage Cell Number" value="" [(ngModel)]="garage.cellnumber" name="cellnumber">
-  </mat-form-field>
-  <button type="submit" mat-raised-button color="primary">Submit</button>
-</form>
+<mat-card class="form-group">
+  <mat-card-title>
+    Enter Garage Detail
+  </mat-card-title>
+  <hr />
+  <mat-card-content>
+    <form (ngSubmit)="onSubmit()" >
+      <mat-form-field class="input-field">
+        <input matInput placeholder="Garage Name" value="" [(ngModel)]="garage.name" name="name">
+      </mat-form-field>
+      <mat-form-field class="input-field">
+        <input matInput placeholder="Garage Address" value="" [(ngModel)]="garage.address" name="address">
+      </mat-form-field>
+      <mat-form-field class="input-field">
+        <input matInput placeholder="Garage Cell Number" value="" [(ngModel)]="garage.cellnumber" name="cellnumber">
+      </mat-form-field>
+      <mat-form-field class="input-field">
+        <mat-select placeholder="Garage Type" [(ngModel)]="garage.type" name="type">
+          <mat-option value="car">Car</mat-option>
+          <mat-option value="bike">Bike</mat-option>
+          <mat-option value="other">Other</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button type="submit" mat-raised-button color="primary">Submit</button>
+    </form>
+  </mat-card-content>
+</mat-card>
