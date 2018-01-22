@@ -1,0 +1,12 @@
+<form (ngSubmit)="onSubmit()">
+  <mat-form-field class="input-field">
+    <input matInput placeholder="Garage Name" value="" [(ngModel)]="garage.name" name="name">
+  </mat-form-field>
+  <mat-form-field class="input-field">
+    <input matInput placeholder="Garage Address" value="" [(ngModel)]="garage.address" name="address">
+  </mat-form-field>
+  <mat-form-field class="input-field">
+    <input matInput placeholder="Garage Cell Number" value="" [(ngModel)]="garage.cellnumber" name="cellnumber">
+  </mat-form-field>
+  <button type="submit" mat-raised-button color="primary">Submit</button>
+</form>
